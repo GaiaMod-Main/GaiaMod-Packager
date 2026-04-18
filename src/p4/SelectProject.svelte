@@ -37,7 +37,7 @@
     },
     onFinishImporting: (files) => {
       if (!isImportingProject) {
-        // Import was cancelled.
+        // Import was cancelled...
         return;
       }
       $type = 'file';
