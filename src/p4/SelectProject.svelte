@@ -114,7 +114,7 @@
   };
   const handleDrop = ({detail: dataTransfer}) => {
     const name = dataTransfer.files[0].name;
-    if (name.endsWith('.sb') || name.endsWith('.sb2') || name.endsWith('.sb3') || name.endsWith('.pm') || name.endsWith('.pmp')) {
+    if (name.endsWith('.sb') || name.endsWith('.sb2') || name.endsWith('.sb3') || name.endsWith('.pm') || name.endsWith('.pmp')) || name.endsWith('.dino') || name.endsWith('.snail') || name.endsWith('.electra') || name.endsWith('.torch') || name.endsWith('.omega') || name.endsWith('.gaia') {
       $type = 'file';
       setFiles(dataTransfer.files);
     }
@@ -231,7 +231,7 @@
     <p>{$_('select.selectHelp')}</p>
 
     <div class="options">
-      <div class="option">
+      <!-- <div class="option">
         <label>
           <input type="radio" name="project-type" bind:group={$type} value="id">
           {$_('select.id')}
@@ -239,14 +239,14 @@
         {#if $type === "id"}
           <input type="text" value={getDisplayedProjectURL()} spellcheck="false" on:keypress={submitOnEnter} on:input={handleInput} on:focus={handleFocus}>
         {/if}
-      </div>
+      </div> -->
       <!-- TurboWarp Desktop looks for the file-input-option class for special handling, so be careful when modifying this. -->
       <div class="option file-input-option">
         <label>
           <input type="radio" name="project-type" bind:group={$type} value="file">
           {$_('select.file')}
         </label>
-        <input hidden={$type !== "file"} on:change={handleFileInputChange} bind:this={fileInputElement} type="file" accept=".sb,.sb2,.sb3, .pm, .pmp, .goobert">
+        <input hidden={$type !== "file"} on:change={handleFileInputChange} bind:this={fileInputElement} type="file" accept=".sb,.sb2,.sb3, .pm, .pmp, .dino, .snail, .electra, .torch, .omega, .gaia, .goobert">
       </div>
       <div class="option">
         <label>
