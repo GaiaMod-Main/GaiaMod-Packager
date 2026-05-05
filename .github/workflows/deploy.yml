@@ -1,6 +1,6 @@
 name: Deploy to GitHub Pages
 env:
- GITHUB_TOKEN: ${{  secrets.t  }}
+ GITHUB_TOKEN: ${{  secrets.T  }}
 on:
   workflow_dispatch:
   repository_dispatch:
